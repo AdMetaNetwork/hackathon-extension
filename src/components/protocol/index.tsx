@@ -1,5 +1,6 @@
 import { FC } from "react";
 import BaseButton from "../ui/base-button";
+import * as U from '../../util'
 
 const Protocol: FC = () => {
   return (
@@ -17,7 +18,9 @@ const Protocol: FC = () => {
       <div className="flex justify-center mb-10">
         <BaseButton 
           label="Agree"
-          handleClick={() => {}}
+          handleClick={() => {
+            U.Helper.goWeb('http://localhost:3000/authorized')
+          }}
         />
       </div>
     </div>

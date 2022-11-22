@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Jazzicon from 'react-jazzicon'
 import BaseTag from "../ui/base-tag";
+import browser from 'webextension-polyfill'
 
 const NFT: FC = () => {
 
@@ -13,6 +14,9 @@ const NFT: FC = () => {
           <div className="ml-2">
             <BaseTag
               label="SWAP"
+              handleClick={() => {
+                browser.storage.local.clear()
+              }}
             />
           </div>
           <div className="ml-2">

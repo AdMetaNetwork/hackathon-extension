@@ -2,8 +2,11 @@ import { FC, useMemo } from "react";
 import Jazzicon from 'react-jazzicon'
 import * as U from '../../util'
 
-const Account: FC = () => {
-  const address = '19KvnKoBTgPYLpRYmTG6Bj3CgZAXim7DcAVhTgZnyJES6xm'
+interface Prop {
+  address: string
+}
+
+const Account: FC<Prop> = ({ address }) => {
 
   const generateAvator = useMemo(() => {
     return address && <Jazzicon diameter={40} seed={Math.round(Math.random() * 10000000)} />
@@ -14,7 +17,7 @@ const Account: FC = () => {
       {generateAvator}
       <div className="ml-4">
         <div className="text-white text-lg font-light italic">Account 1</div>
-        <div className="text-white text-lg font-thin italic">{U.Help.formatAddress(address)}</div>
+        <div className="text-white text-lg font-thin italic">{U.Helper.formatAddress(address)}</div>
       </div>
     </div>
   )

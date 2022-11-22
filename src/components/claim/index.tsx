@@ -1,7 +1,11 @@
 import { FC } from "react";
 import BaseButton from "../ui/base-button";
 
-const Claim: FC = () => {
+interface Prop {
+  handClaim: () => void
+}
+
+const Claim: FC<Prop> = ({ handClaim }) => {
   return (
     <div className="w-full pl-4 pr-4">
       <div className="text-white text-base font-thin italic mb-10">Thank you for installing and using our plugin, you will be rewarded.</div>
@@ -9,7 +13,7 @@ const Claim: FC = () => {
       <div className="mb-10 flex justify-center">
         <BaseButton
           label="Claim 20 ADM"
-          handleClick={() => { }}
+          handleClick={handClaim}
         />
       </div>
     </div>
